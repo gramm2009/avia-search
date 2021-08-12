@@ -1,6 +1,14 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
+import { FlightType } from '../mobX/State';
 
-export default function FlyCard() {
+type FlyCardPropsType = {
+    el: FlightType;
+};
+
+const FlyCard: React.FC<FlyCardPropsType> = observer(({ el }) => {
+    console.log(el);
+
     return (
         <div className="fly-card">
             <div className="fly-card__header  fly-card--info-block">
@@ -28,4 +36,5 @@ export default function FlyCard() {
             <button className="fly-card__btn fly-card--info-block">ВЫБРАТЬ</button>
         </div>
     );
-}
+});
+export default FlyCard;
