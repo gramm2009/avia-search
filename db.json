@@ -1,0 +1,28 @@
+{
+  "access": [
+    {
+      "id": "test@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "fullName": "Vasiliy",
+      "email": "test1@gmail.co",
+      "phone": "+797798988989"
+    },
+    {
+      "id": "2",
+      "fullName": "John Doe",
+      "email": "test1@gmail.co",
+      "phone": "+797798988989"
+    },
+    {
+      "id": "1625761443123",
+      "fullName": "fgfdg",
+      "email": "fgdf",
+      "phone": "fdgfdg"
+    }
+  ]
+}
