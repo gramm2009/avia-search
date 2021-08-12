@@ -1,0 +1,56 @@
+.fly-card {
+    width: 760px;
+    height: 320px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    
+    div{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    p {
+        font-size: 22px;
+    }
+
+    &-container{
+        padding: 0 15px;
+    }
+    
+    &--info-block {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__header {
+        background-color: rgb(121, 121, 245);
+        padding: 0 15px;
+        color: white;
+        &__aviacompany-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        &__price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+
+            p {
+
+                &:last-child {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    
+}
