@@ -14,9 +14,6 @@ const FlyCard: React.FC<FlyCardPropsType> = observer(({ el }) => {
     let transfer = 0;
     let transferBack = 0;
 
-    // let operatingAirline: string;
-    // let operatingAirlineBack: string;
-
     if (fly.legs[0].segments.length === 2) {
         transfer = 1;
     } else {

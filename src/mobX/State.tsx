@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { data } from '../../utils/mock/db';
 
-const flights = [data.result.flights[3]];
+const flights = [...data.result.flights];
 export type FlightsType = typeof flights;
 export type FlightType = typeof flights[0];
 
