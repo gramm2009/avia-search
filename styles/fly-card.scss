@@ -3,21 +3,27 @@
     height: 320px;
     background-color: #fff;
     margin-bottom: 40px;
-    
-    div{
+    position: relative;
+
+    div {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
     }
-    
+
     p {
         font-size: 22px;
     }
 
-    &-container{
-        padding: 0 15px;
+    span {
+        // margin-right: 5px;
+        margin: 0 5px;
     }
-    
+
+    &-container {
+        padding: 0 10px;
+    }
+
     &--info-block {
         width: 100%;
         height: 40px;
@@ -25,10 +31,36 @@
         justify-content: space-between;
     }
 
+    &--info-block--left,
+    &--info-block--right {
+        width: 40%;
+    }
+
+    &--info-block--right {
+        justify-content: flex-end;
+    }
+
+    &--arrow {
+        color: blue;
+        font-size: 24px;
+    }
+
+    &___blue {
+        color: blue;
+    }
+
+    &___blue-mar-fs {
+        color: blue;
+        margin: 0 5px;
+        font-size: 13px;
+    }
+
+
     &__header {
         background-color: rgb(121, 121, 245);
         padding: 0 15px;
         color: white;
+
         &__aviacompany-logo {
             display: flex;
             align-items: center;
@@ -37,7 +69,7 @@
         &__price {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-end !important;
             justify-content: center;
 
             p {
@@ -47,10 +79,77 @@
                 }
             }
         }
-        
+
     }
-    
-    
-    
-    
+
+    &__block-1,
+    &__block-4 {
+        border-bottom: 1px solid silver;
+    }
+
+    &__block-2,
+    &__block-5 {
+        position: relative;
+
+        &__transfer {
+            position: absolute;
+            top: 29px;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: #fff;
+            padding: 0 15px;
+            color: yellowgreen;
+            z-index: 1;
+        }
+
+        &__line {
+            width: 80%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            border: 1px solid silver;
+            height: 0;
+            top: 38px;
+        }
+    }
+
+    &__block-3,
+    &__block-6 {
+
+        .fly-card--info-block--left {
+            width: 100%;
+
+            span {
+                margin-top: 10px;
+
+                &:nth-child(2) {
+                    font-style: oblique;
+                }
+            }
+        }
+    }
+
+    hr {
+        border: 1px solid blue;
+        width: 100%;
+        position: absolute;
+        top: 158px
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:none;
+        outline: none;
+        background-color: yellowgreen;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.5s;
+        
+        &:hover{
+            background-color: rgb(162, 236, 13);
+        }
+    }
 }
