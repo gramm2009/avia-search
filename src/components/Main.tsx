@@ -12,7 +12,7 @@ const Main: React.FC<MainPropsType> = observer(({ arrFlightsAfterAllFilters }) =
 
     return (
         <div className="main">
-            {arrFlightsAfterAllFilters ? (
+            {arrFlightsAfterAllFilters.length ? (
                 arrFlightsAfterAllFilters.map((el, i) => {
                     if (i < counterShowCard) {
                         return <FlyCard el={el} key={i} />;
@@ -22,7 +22,7 @@ const Main: React.FC<MainPropsType> = observer(({ arrFlightsAfterAllFilters }) =
                 <div className="main__no-result">Нет результатов по заданным параметрам</div>
             )}
 
-            {arrFlightsAfterAllFilters ? (
+            {arrFlightsAfterAllFilters.length ? (
                 <button className="main__btn" onClick={() => setCounterShowCard((prev) => prev + 2)}>
                     Показать еще
                 </button>
