@@ -4,16 +4,16 @@ import { FlightsType } from '../mobX/State';
 import FlyCard from './FlyCard';
 
 type MainPropsType = {
-    arrFlights: FlightsType;
+    arrFlightsAfterAllFilters: FlightsType;
 };
 
-const Main: React.FC<MainPropsType> = observer(({ arrFlights }) => {
+const Main: React.FC<MainPropsType> = observer(({ arrFlightsAfterAllFilters }) => {
     const [counterShowCard, setCounterShowCard] = useState<number>(2);
 
     return (
         <div className="main">
-            {arrFlights ? (
-                arrFlights.map((el, i) => {
+            {arrFlightsAfterAllFilters ? (
+                arrFlightsAfterAllFilters.map((el, i) => {
                     if (i < counterShowCard) {
                         return <FlyCard el={el} key={i} />;
                     }
@@ -22,7 +22,7 @@ const Main: React.FC<MainPropsType> = observer(({ arrFlights }) => {
                 <div className="main__no-result">Нет результатов по заданным параметрам</div>
             )}
 
-            {arrFlights ? (
+            {arrFlightsAfterAllFilters ? (
                 <button className="main__btn" onClick={() => setCounterShowCard((prev) => prev + 2)}>
                     Показать еще
                 </button>

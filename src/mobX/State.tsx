@@ -14,6 +14,7 @@ class State {
     checkedFilterTransferDirect = false;
     chehgePriceFrom = '';
     chehgePriceTo = '';
+    checkedAirCompany: Array<string> = [];
 
     constructor(flights: FlightsType) {
         this.flights = flights;
@@ -45,6 +46,18 @@ class State {
         })();
 
         console.log(this.unicCompaniName);
+    }
+
+    checkedAirCompanyId(id: string) {
+        if (this.checkedAirCompany.includes(id)) {
+            action(() => {
+                this.checkedAirCompany = this.checkedAirCompany.filter((el) => el !== id);
+            })();
+        } else {
+            action(() => {
+                this.checkedAirCompany.push(id);
+            })();
+        }
     }
 }
 

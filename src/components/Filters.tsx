@@ -5,14 +5,18 @@ import State from '../mobX/State';
 type FiltersPropsType = {
     unicCompaniName: [string, string][];
     filterUnicCompanyName: [string, string][];
+    uidCompany: Array<string>;
 };
 
-const Filters: React.FC<FiltersPropsType> = observer(({ unicCompaniName, filterUnicCompanyName }) => {
-    console.log(unicCompaniName);
-    console.log(filterUnicCompanyName);
+const Filters: React.FC<FiltersPropsType> = observer(({ unicCompaniName, filterUnicCompanyName, uidCompany }) => {
     const sortHiLo = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const element = e.target as HTMLElement;
         if (element.id) State.chengeFilterSortHiLo(element.id);
+    };
+
+    const filterAviacompany = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const element = e.target as HTMLElement;
+        if (element.id) State.checkedAirCompanyId(element.id);
     };
 
     return (
@@ -55,21 +59,24 @@ const Filters: React.FC<FiltersPropsType> = observer(({ unicCompaniName, filterU
                     </label>
                 </div>
 
-                <div className="filters__aviacompany">
+                <div className="filters__aviacompany" onClick={(e) => filterAviacompany(e)}>
                     {/* ЗДЕСЬ НУЖНО ОТРЕНДЕРИТЬ ПО ФИЛЬТРУ */}
                     <h3>Авиакомпании</h3>
 
                     {unicCompaniName
                         ? unicCompaniName.map((unicName, i) => {
                               let disabled = true;
+
                               filterUnicCompanyName.forEach((el) => {
                                   if (unicName[0] === el[0]) disabled = false;
                               });
 
+                              uidCompany;
+
                               return (
                                   <label key={i}>
-                                      <input type="checkbox" disabled={disabled} />- <p className="filters__aviacompany__name">{unicName[0]}</p>{' '}
-                                      <p>от {unicName[1]} р.</p>
+                                      <input type="checkbox" disabled={disabled} id={uidCompany[i]} />-{' '}
+                                      <p className="filters__aviacompany__name">{unicName[0]}</p> <p>от {unicName[1]} р.</p>
                                   </label>
                               );
                           })
