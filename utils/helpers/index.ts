@@ -4,8 +4,8 @@ import { filterFromPrice } from "./filterFromPrice"
 import { filterFromTransfer } from "./filterFromTransfer"
 import { forRenderAircompany } from "./forRenderAircompany"
 import { sortFromHiLo } from "./sortFromHiLo"
-import {arrCarierUid} from "./arrCarierUid"
-import {filterFromAviaCompany} from "./filterFromAviaCompany"
+import { arrCarierUid } from "./arrCarierUid"
+import { filterFromAviaCompany } from "./filterFromAviaCompany"
 
 export {
     duration,

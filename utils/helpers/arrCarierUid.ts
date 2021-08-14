@@ -15,3 +15,4 @@ export const arrCarierUid = (arrFlights: FlightsType, unicCompaniName: [string, 
 
     return newArrayUid;
 };
+

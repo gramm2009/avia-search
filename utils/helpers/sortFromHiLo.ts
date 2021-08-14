@@ -1,19 +1,13 @@
 import { FlightsType } from '../../src/mobX/State';
 
+export const sortFromHiLo = (arrFlights: FlightsType, sortFilterId: string): FlightsType => {
+    let filterFlight: FlightsType = [...arrFlights];
 
-export const sortFromHiLo = (
-    arrFlights:FlightsType,
-    sortFilterId:string
-    ):FlightsType => {
-    
-    let filterFlight:FlightsType=[...arrFlights]
-     
     if (sortFilterId === 'filter-up-price') {
         filterFlight.sort((prev, next) => +prev.flight.price.total.amount - +next.flight.price.total.amount);
     }
     if (sortFilterId === 'filter-down-price') {
-       filterFlight.sort((prev,next) =>+next.flight.price.total.amount-+prev.flight.price.total.amount);
-
+        filterFlight.sort((prev, next) => +next.flight.price.total.amount - +prev.flight.price.total.amount);
     }
 
     if (sortFilterId === 'filter-duration-time') {
@@ -21,6 +15,6 @@ export const sortFromHiLo = (
             (prev, next) => prev.flight.legs[0].duration + prev.flight.legs[1].duration - (next.flight.legs[0].duration + next.flight.legs[1].duration)
         );
     }
-    
-    return filterFlight
+
+    return filterFlight;
 };

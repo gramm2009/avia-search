@@ -16,7 +16,6 @@
     }
 
     span {
-        // margin-right: 5px;
         margin: 0 5px;
     }
 
@@ -140,15 +139,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border:none;
+        border: none;
         outline: none;
         background-color: yellowgreen;
         color: white;
         font-size: 16px;
         cursor: pointer;
         transition: 0.5s;
-        
-        &:hover{
+
+        &:hover {
             background-color: rgb(162, 236, 13);
         }
     }

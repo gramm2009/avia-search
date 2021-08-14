@@ -1,17 +1,15 @@
-.main{
+.main {
     background-color: grey;
     width: 800px;
     height: 100%;
     overflow: hidden;
     overflow-y: auto;
-    // padding: 25px 20px 0 20px;
     padding-top: 25px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    &__btn{
+
+    &__btn {
         background-color: rgba(133, 133, 238, 0.815);
         border-radius: 15px;
         border: none;
@@ -23,13 +21,13 @@
         margin-bottom: 20px;
         cursor: pointer;
         transition: 0.5s;
-        
-        &:hover{
+
+        &:hover {
             background-color: rgba(67, 67, 228, 0.931);
         }
     }
-    
-    &__no-result{
+
+    &__no-result {
         width: 100%;
         height: 100%;
         display: flex;
@@ -38,8 +36,8 @@
         font-size: 26px;
         font-weight: 500;
         line-height: 50px;
-        transform: scale(1,3);
+        transform: scale(1, 3);
         color: rgba(126, 126, 221, 0.808);
-        
+
     }
 }

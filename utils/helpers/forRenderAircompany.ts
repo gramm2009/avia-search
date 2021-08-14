@@ -1,14 +1,7 @@
 import { FlightsType } from './../../src/mobX/State';
 import { sortFromHiLo } from './sortFromHiLo';
 
-export const forRenderAircompany = (
-    arrFlights: FlightsType,
-    sortFilterId: string,
-    filterTransferOne: boolean,
-    filterTransferDirect: boolean,
-    filterPriceFrom: string,
-    filterPriceTo: string
-): [string, string][] => {
+export const forRenderAircompany = (arrFlights: FlightsType, sortFilterId: string): [string, string][] => {
     let sortArrFlights: FlightsType = [];
     let setCompany: Set<string> = new Set();
     let mapCompany: Map<string, string> = new Map();

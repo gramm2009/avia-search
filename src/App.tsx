@@ -8,7 +8,6 @@ export const App: React.FC = observer(() => {
     const arrFlights: FlightsType = State.flights;
     let arrFlightsAfterAllFilters: FlightsType = [];
 
-    //сюда собираю все значения фильтров
     const sortFilterId: string = State.checkedFilterSortHiLo;
     const filterTransferOne: boolean = State.checkedFilterTransferOne;
     const filterTransferDirect: boolean = State.checkedFilterTransferDirect;
@@ -16,30 +15,15 @@ export const App: React.FC = observer(() => {
     const filterPriceTo: string = State.chehgePriceTo;
     const filterAviaCompany: Array<string> = State.checkedAirCompany;
 
-    //здесь функции которые фильтруют
     const resHiLo: FlightsType = sortFromHiLo(arrFlights, sortFilterId);
     const resTransfer: FlightsType = filterFromTransfer(resHiLo, filterTransferOne, filterTransferDirect);
     const resPrice: FlightsType = filterFromPrice(resTransfer, filterPriceFrom, filterPriceTo);
     const resAviaCompany: FlightsType = filterFromAviaCompany(resPrice, filterAviaCompany);
 
     arrFlightsAfterAllFilters = [...resAviaCompany];
-    //функция для отрисовки компаний и их фильтра
-    const unicCompaniName: [string, string][] = forRenderAircompany(
-        arrFlights,
-        sortFilterId,
-        filterTransferOne,
-        filterTransferDirect,
-        filterPriceFrom,
-        filterPriceTo
-    );
-    const filterUnicCompanyName: [string, string][] = forRenderAircompany(
-        resPrice,
-        sortFilterId,
-        filterTransferOne,
-        filterTransferDirect,
-        filterPriceFrom,
-        filterPriceTo
-    );
+
+    const unicCompaniName: [string, string][] = forRenderAircompany(arrFlights, sortFilterId);
+    const filterUnicCompanyName: [string, string][] = forRenderAircompany(resPrice, sortFilterId);
     const uidCompany = arrCarierUid(arrFlights, unicCompaniName);
 
     return (

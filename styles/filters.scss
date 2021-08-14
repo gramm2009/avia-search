@@ -6,10 +6,9 @@
 .filters {
     background-color: green;
     width: 400px;
-    // height: 100%;
 
     &-container {
-        padding: 50px 15px 0 15px;
+        padding: 25px 15px 0 15px;
     }
 
     h3 {
@@ -38,7 +37,7 @@
 
     &__hi-lo {
         @extend %flexColumn;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
     }
 
     &__transfer {
@@ -53,8 +52,8 @@
             span {
                 margin-right: 6px;
             }
-            
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 margin-bottom: 20px;
             }
 
@@ -64,23 +63,29 @@
                 }
             }
         }
-        
-        input{
+
+        input {
             width: 300px;
             height: 25px;
             border-radius: 5px;
-            border:1px solid silver;
+            border: 1px solid silver;
             outline: none;
             padding: 0 15px;
         }
     }
-    
-    &__aviacompany{
-        &__name{
-            width: 200px;
+
+    &__aviacompany {
+        height: 295px;
+        background-color: #fff;
+        overflow-y: auto;
+
+        &__name {
+            width: 240px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
     }
+
 }

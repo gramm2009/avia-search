@@ -76,7 +76,8 @@ const Filters: React.FC<FiltersPropsType> = observer(({ unicCompaniName, filterU
                               return (
                                   <label key={i}>
                                       <input type="checkbox" disabled={disabled} id={uidCompany[i]} />-{' '}
-                                      <p className="filters__aviacompany__name">{unicName[0]}</p> <p>от {unicName[1]} р.</p>
+                                      <p className="filters__aviacompany__name">{unicName[0]}</p>
+                                      <p>от {unicName[1]} р.</p>
                                   </label>
                               );
                           })
