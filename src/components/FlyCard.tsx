@@ -1,8 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { FlightType } from '../mobX/State';
-import { time } from '../../utils/helpers/time.ts';
-import { duration } from '../../utils/helpers/duration.ts';
+import { timePoint, durationFly } from '../../utils/helpers';
 
 type FlyCardPropsType = {
     el: FlightType;
@@ -56,18 +55,18 @@ const FlyCard: React.FC<FlyCardPropsType> = observer(({ el }) => {
                 <div className="fly-card__block-2 fly-card--info-block">
                     <div className="fly-card--info-block--left">
                         <span>
-                            {time(fly.legs[0].segments[0].departureDate).time}
-                            <span className="fly-card___blue-mar-fs">{time(fly.legs[0].segments[0].departureDate).day}</span>{' '}
+                            {timePoint(fly.legs[0].segments[0].departureDate).time}
+                            <span className="fly-card___blue-mar-fs">{timePoint(fly.legs[0].segments[0].departureDate).day}</span>{' '}
                         </span>
                     </div>
                     <div>
-                        <span className="fly-card--info-block__duration">{duration(fly.legs[0].duration)}</span>
+                        <span className="fly-card--info-block__duration">{durationFly(fly.legs[0].duration)}</span>
                     </div>
 
                     <div className="fly-card--info-block--right">
                         <span>
-                            {time(fly.legs[0].segments[0].arrivalDate).day}
-                            <span className="fly-card___blue-mar-fs">{time(fly.legs[0].segments[transfer].arrivalDate).time}</span>
+                            {timePoint(fly.legs[0].segments[0].arrivalDate).day}
+                            <span className="fly-card___blue-mar-fs">{timePoint(fly.legs[0].segments[transfer].arrivalDate).time}</span>
                         </span>
                     </div>
                     <div className="fly-card__block-2__transfer">{transfer ? transfer + ' пересадка' : null}</div>
@@ -104,18 +103,18 @@ const FlyCard: React.FC<FlyCardPropsType> = observer(({ el }) => {
                 <div className="fly-card__block-5 fly-card--info-block">
                     <div className="fly-card--info-block--left">
                         <span>
-                            {time(fly.legs[1].segments[0].departureDate).time}
-                            <span className="fly-card___blue-mar-fs">{time(fly.legs[1].segments[0].departureDate).day}</span>{' '}
+                            {timePoint(fly.legs[1].segments[0].departureDate).time}
+                            <span className="fly-card___blue-mar-fs">{timePoint(fly.legs[1].segments[0].departureDate).day}</span>{' '}
                         </span>
                     </div>
                     <div>
-                        <span className="fly-card--info-block__duration">{duration(fly.legs[1].duration)}</span>
+                        <span className="fly-card--info-block__duration">{durationFly(fly.legs[1].duration)}</span>
                     </div>
 
                     <div className="fly-card--info-block--right">
                         <span>
-                            {time(fly.legs[1].segments[transferBack].arrivalDate).day}
-                            <span className="fly-card___blue-mar-fs">{time(fly.legs[1].segments[transferBack].arrivalDate).time}</span>
+                            {timePoint(fly.legs[1].segments[transferBack].arrivalDate).day}
+                            <span className="fly-card___blue-mar-fs">{timePoint(fly.legs[1].segments[transferBack].arrivalDate).time}</span>
                         </span>
                     </div>
                     <div className="fly-card__block-5__transfer">{transferBack ? transferBack + '  пересадка' : null}</div>
