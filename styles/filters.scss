@@ -4,7 +4,6 @@
 }
 
 .filters {
-    background-color: green;
     width: 400px;
 
     &-container {
@@ -30,7 +29,7 @@
     }
 
     &__heder {
-        background-color: silver;
+        // background-color: silver;
         height: 50px;
         width: 100%;
     }
@@ -76,7 +75,6 @@
 
     &__aviacompany {
         height: 295px;
-        background-color: #fff;
         overflow-y: auto;
 
         &__name {
