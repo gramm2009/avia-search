@@ -1,4 +1,4 @@
-export const Duration = (time: number): string => {
+export const duration = (time: number): string => {
     let hour = Math.floor(+(time/60))  ;
     let min = (time - (hour * 60));
 

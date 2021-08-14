@@ -1,15 +1,13 @@
-import { makeAutoObservable } from 'mobx';
+import { action, makeAutoObservable } from 'mobx';
 import { data } from '../../utils/mock/db';
 
 const flights = [...data.result.flights];
 export type FlightsType = typeof flights;
 export type FlightType = typeof flights[0];
 
-console.log('Render state');
-
 class State {
     flights: FlightsType = [];
-    // filterFlights: FlightsType = []
+    unicCompaniName: [string, string][] = [];
 
     checkedFilterSortHiLo = 'filter-up-price';
     checkedFilterTransferOne = false;
@@ -39,6 +37,14 @@ class State {
 
     chengeFilterTo(price: string) {
         this.chehgePriceTo = price;
+    }
+
+    unicName(arrUnicName: [string, string][]) {
+        action(async () => {
+            this.unicCompaniName = arrUnicName;
+        })();
+
+        console.log(this.unicCompaniName);
     }
 }
 

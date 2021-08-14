@@ -1,18 +1,15 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
-import State, { FlightsType } from '../mobX/State';
+import State from '../mobX/State';
 
-const Filters = observer(() => {
-    const flights: FlightsType = State.flights;
-    const SetCompany: Set<string> = new Set();
+type FiltersPropsType = {
+    unicCompaniName: [string, string][];
+    filterUnicCompanyName: [string, string][];
+};
 
-    flights.forEach((el) => {
-        SetCompany.add(el.flight.legs[0].segments[0].airline.caption);
-    });
-    // let arrCompany:Array<string> =Array.from(SetCompany)
-
-    console.log(SetCompany);
-
+const Filters: React.FC<FiltersPropsType> = observer(({ unicCompaniName, filterUnicCompanyName }) => {
+    console.log(unicCompaniName);
+    console.log(filterUnicCompanyName);
     const sortHiLo = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         const element = e.target as HTMLElement;
         if (element.id) State.chengeFilterSortHiLo(element.id);
@@ -62,12 +59,21 @@ const Filters = observer(() => {
                     {/* ЗДЕСЬ НУЖНО ОТРЕНДЕРИТЬ ПО ФИЛЬТРУ */}
                     <h3>Авиакомпании</h3>
 
-                    <label>
-                        <input type="checkbox" />- <p className="filters__aviacompany__name">LOT Polish Airlines</p> <p>от 21049 р.</p>
-                    </label>
-                    <label>
-                        <input type="checkbox" />- <p className="filters__aviacompany__name">Аэрофлот - российские</p> <p>от 31733 р.</p>
-                    </label>
+                    {unicCompaniName
+                        ? unicCompaniName.map((unicName, i) => {
+                              let disabled = true;
+                              filterUnicCompanyName.forEach((el) => {
+                                  if (unicName[0] === el[0]) disabled = false;
+                              });
+
+                              return (
+                                  <label key={i}>
+                                      <input type="checkbox" disabled={disabled} />- <p className="filters__aviacompany__name">{unicName[0]}</p>{' '}
+                                      <p>от {unicName[1]} р.</p>
+                                  </label>
+                              );
+                          })
+                        : null}
                 </div>
             </div>
         </div>
