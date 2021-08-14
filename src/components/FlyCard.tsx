@@ -1,7 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { FlightType } from '../mobX/State';
-import { time, duration } from '../../utils/helpers';
+import { time } from '../../utils/helpers/time';
+import { duration } from '../../utils/helpers/duration';
 
 type FlyCardPropsType = {
     el: FlightType;
