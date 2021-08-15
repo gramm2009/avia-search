@@ -54,7 +54,6 @@
         font-size: 13px;
     }
 
-
     &__header {
         background-color: rgb(121, 121, 245);
         padding: 0 15px;
@@ -72,13 +71,11 @@
             justify-content: center;
 
             p {
-
                 &:last-child {
                     font-size: 12px;
                 }
             }
         }
-
     }
 
     &__block-1,
@@ -114,7 +111,6 @@
 
     &__block-3,
     &__block-6 {
-
         .fly-card--info-block--left {
             width: 100%;
 
@@ -132,7 +128,7 @@
         border: 1px solid blue;
         width: 100%;
         position: absolute;
-        top: 158px
+        top: 158px;
     }
 
     &__btn {
