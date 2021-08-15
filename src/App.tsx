@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import Filters from './components/Filters';
 import Main from './components/Main';
-import { sortFromHiLo, filterFromTransfer, filterFromPrice, forRenderAircompany, arrCarierUid, filterFromAviaCompany } from '../utils/helpers';
+import { sortFromHiLo, filterFromTransfer, filterFromPrice, forRenderAircompany, arrCarierUid, filterFromAviaCompany } from './utils/helpers';
 import State, { FlightsType } from './mobX/State';
 
 export const App: React.FC = observer(() => {

@@ -1,5 +1,5 @@
 import { action, makeAutoObservable } from 'mobx';
-import { data } from '../../utils/mock/db';
+import { data } from '../utils/mock/db';
 
 const flights = [...data.result.flights];
 export type FlightsType = typeof flights;
